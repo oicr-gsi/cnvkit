@@ -1,3 +1,4 @@
+
 package ca.on.oicr.pde.workflows;
 
 import ca.on.oicr.pde.utilities.workflows.OicrWorkflow;
@@ -201,7 +202,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         zipOutput.addParent(parentJob);
 
         // Provision .seg, .varscanSomatic_confints_CP.txt, model-fit.tar.gz files
-        String segFile = this.outputFilenamePrefix + ".segmetrics.call.cns";
+        String segFile = this.outputFilenamePrefix + ".seg";
         SqwFile cnSegFile = createOutputFile(this.outDir + "/" + segFile, TXT_METATYPE, this.manualOutput);
         cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit ");
         zipOutput.addFile(cnSegFile);
