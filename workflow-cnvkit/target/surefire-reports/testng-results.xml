@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="2996" started-at="2018-06-21T19:41:12Z" finished-at="2018-06-21T19:41:15Z">
+  <suite name="Surefire suite" duration-ms="4076" started-at="2018-06-21T19:44:16Z" finished-at="2018-06-21T19:44:21Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="2996" started-at="2018-06-21T19:41:12Z" finished-at="2018-06-21T19:41:15Z">
+    <test name="Surefire test" duration-ms="4076" started-at="2018-06-21T19:44:16Z" finished-at="2018-06-21T19:44:21Z">
       <class name="ca.on.oicr.pde.workflows.WorkflowClientTest">
-        <test-method status="PASS" signature="validateRegressionTestDefinition()[pri:0, instance:ca.on.oicr.pde.workflows.WorkflowClientTest@6ef888f6]" name="validateRegressionTestDefinition" duration-ms="2986" started-at="2018-06-21T15:41:12Z" finished-at="2018-06-21T15:41:15Z">
+        <test-method status="PASS" signature="validateRegressionTestDefinition()[pri:0, instance:ca.on.oicr.pde.workflows.WorkflowClientTest@6ef888f6]" name="validateRegressionTestDefinition" duration-ms="4065" started-at="2018-06-21T15:44:16Z" finished-at="2018-06-21T15:44:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateRegressionTestDefinition -->

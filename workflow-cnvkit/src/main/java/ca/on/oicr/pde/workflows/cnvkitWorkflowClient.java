@@ -175,7 +175,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
       //  this.cnrFile = this.tmpDir + this.outputFilenamePrefix + ".cnr";
       //  this.cnsFile = this.tmpDir + this.outputFilenamePrefix + ".cns";
       //  this.scatterPDFFile = this.tmpDir + this.outputFilenamePrefix + "-scatter.pdf";
-        this.scatterPNGFile =  this.filepath + "scatter.png";
+        this.scatterPNGFile =  this.filepath + ".scatter.png";
       //  this.diagramPDFFile = this.tmpDir + this.outputFilenamePrefix + "-diagram.pdf";
        this.segmentricscnsFile = this.filepath + ".segmetrics.cns";
        this.segmetricsCallcnsFile = this.filepath + ".segmetrics.call.cns";
