@@ -45,6 +45,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private String segmentricscnsFile;
     private String segmetricsCallcnsFile;
     //private String segmetricsCallDiagramPDFFile;
+    private String filepath;
     
     
     // Output check
@@ -166,17 +167,18 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         // run sequenzaR; handle output; provision files (3) -- model-fit.zip; text/plain; text/plain
         Job parentJob = null;
         this.outDir = this.outputFilenamePrefix + "_output";
-        this.bamFile = this.outDir + this.tumor;
+        this.bamFile = this.tumor;
+        this.filepath =  this.tmpDir + this.outputFilenamePrefix + "/TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign.recal";
       //  this.bambaiFile = this.tmpDir + this.outputFilenamePrefix + ".bam.bai";
       // this.targetcoverageFile = this.tmpDir + this.outputFilenamePrefix + ".targetcoverage.cnn";
       //  this.antiTargetCoverageFile = this.tmpDir + this.outputFilenamePrefix + ".antitargetcoverage.cnn";
       //  this.cnrFile = this.tmpDir + this.outputFilenamePrefix + ".cnr";
       //  this.cnsFile = this.tmpDir + this.outputFilenamePrefix + ".cns";
       //  this.scatterPDFFile = this.tmpDir + this.outputFilenamePrefix + "-scatter.pdf";
-        this.scatterPNGFile =  this.bamFile + "scatter.png";
+        this.scatterPNGFile =  this.filepath + "scatter.png";
       //  this.diagramPDFFile = this.tmpDir + this.outputFilenamePrefix + "-diagram.pdf";
-       this.segmentricscnsFile = this.bamFile + ".segmetrics.cns";
-       this.segmetricsCallcnsFile = this.bamFile + ".segmetrics.call.cns";
+       this.segmentricscnsFile = this.filepath + ".segmetrics.cns";
+       this.segmetricsCallcnsFile = this.filepath + ".segmetrics.call.cns";
        // this.segmetricsCallDiagramPDFFile = this.tmpDir + this.outputFilenamePrefix + ".segmetrics.call-diagram.pdf";
         
         
@@ -239,7 +241,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("--scatter");
         cmd.addArgument("--diagram");
         cmd.addArgument("--rlibpath " + this.rpath);
-        cmd.addArgument("--output-dir " + this.outDir);    
+        cmd.addArgument("--output-dir " + this.filepath);    
         batch.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         batch.setQueue(queue);
         return batch;
@@ -251,7 +253,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument(this.pythonexports);
         cmd.addArgument(this.rexports);
         cmd.addArgument("cnvkit.py scatter");
-        cmd.addArgument("-s " +   this.outDir + "/" + this.tumor + ".cn{s,r}");
+        cmd.addArgument("-s " + this.filepath +".cn{s,r}");
         cmd.addArgument("-o " + this.scatterPNGFile); 
         scatter.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         scatter.setQueue(queue);
@@ -265,7 +267,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument(this.pythonexports);
         cmd.addArgument(this.rexports);
         cmd.addArgument("cnvkit.py segmetrics");
-        cmd.addArgument("-s " + this.outDir + "/" + this.tumor + ".cn{s,r}");
+        cmd.addArgument("-s " + this.filepath + ".cn{s,r}");
         cmd.addArgument("--ci");
         cmd.addArgument("--pi");
         segmetrics.setMaxMemory(Integer.toString(cnvkitMem * 1024));
