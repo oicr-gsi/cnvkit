@@ -166,7 +166,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         // run sequenzaR; handle output; provision files (3) -- model-fit.zip; text/plain; text/plain
         Job parentJob = null;
         this.outDir = this.outputFilenamePrefix + "_output";
-        this.bamFile = this.tmpDir + this.outputFilenamePrefix + this.tumor + ".bam";
+        this.bamFile = this.tmpDir + this.outputFilenamePrefix + this.tumor;
       //  this.bambaiFile = this.tmpDir + this.outputFilenamePrefix + ".bam.bai";
       // this.targetcoverageFile = this.tmpDir + this.outputFilenamePrefix + ".targetcoverage.cnn";
       //  this.antiTargetCoverageFile = this.tmpDir + this.outputFilenamePrefix + ".antitargetcoverage.cnn";
@@ -199,7 +199,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         zipOutput.addParent(diagram);
 
         // Provision .seg, .varscanSomatic_confints_CP.txt, model-fit.tar.gz files
-        String segFile = this.outputFilenamePrefix + ".seg";
+       String segFile = this.outputFilenamePrefix + ".seg";
         SqwFile cnSegFile = createOutputFile(this.outDir + "/" + segFile, TXT_METATYPE, this.manualOutput);
         cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit ");
         zipOutput.addFile(cnSegFile);
