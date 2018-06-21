@@ -173,10 +173,10 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
       //  this.cnrFile = this.tmpDir + this.outputFilenamePrefix + ".cnr";
       //  this.cnsFile = this.tmpDir + this.outputFilenamePrefix + ".cns";
       //  this.scatterPDFFile = this.tmpDir + this.outputFilenamePrefix + "-scatter.pdf";
-        this.scatterPNGFile =  this.tmpDir + this.outputFilenamePrefix + this.tumor + "scatter.png";
+        this.scatterPNGFile =  this.bamFile + "scatter.png";
       //  this.diagramPDFFile = this.tmpDir + this.outputFilenamePrefix + "-diagram.pdf";
-       this.segmentricscnsFile = this.tmpDir + this.outputFilenamePrefix + this.tumor + ".segmetrics.cns";
-       this.segmetricsCallcnsFile = this.tmpDir + this.outputFilenamePrefix + this.tumor + ".segmetrics.call.cns";
+       this.segmentricscnsFile = this.bamFile + ".segmetrics.cns";
+       this.segmetricsCallcnsFile = this.bamFile + ".segmetrics.call.cns";
        // this.segmetricsCallDiagramPDFFile = this.tmpDir + this.outputFilenamePrefix + ".segmetrics.call-diagram.pdf";
         
         
@@ -199,7 +199,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         zipOutput.addParent(diagram);
 
         // Provision .seg, .varscanSomatic_confints_CP.txt, model-fit.tar.gz files
-       String segFile = this.outputFilenamePrefix + ".seg";
+        String segFile = this.outputFilenamePrefix + ".seg";
         SqwFile cnSegFile = createOutputFile(this.outDir + "/" + segFile, TXT_METATYPE, this.manualOutput);
         cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit ");
         zipOutput.addFile(cnSegFile);
