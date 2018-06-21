@@ -166,7 +166,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         // run sequenzaR; handle output; provision files (3) -- model-fit.zip; text/plain; text/plain
         Job parentJob = null;
         this.outDir = this.outputFilenamePrefix + "_output";
-        this.bamFile = this.tmpDir + this.outputFilenamePrefix + this.tumor;
+        this.bamFile = this.tumor;
       //  this.bambaiFile = this.tmpDir + this.outputFilenamePrefix + ".bam.bai";
       // this.targetcoverageFile = this.tmpDir + this.outputFilenamePrefix + ".targetcoverage.cnn";
       //  this.antiTargetCoverageFile = this.tmpDir + this.outputFilenamePrefix + ".antitargetcoverage.cnn";
