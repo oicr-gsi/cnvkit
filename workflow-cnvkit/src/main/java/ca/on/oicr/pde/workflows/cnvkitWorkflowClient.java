@@ -96,8 +96,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
             //tools
             python = getProperty("PYTHON");
             rpath = getProperty("RPATH");
-            pythonexports = "export PYTHONHOME=" + this.python + ":$PYTHONHOME" + ";" + 
-                            "export PATH=" + this.python +":$PATH" + ";" +
+            pythonexports = "export PATH=" + this.python +":$PATH" + ";" +
                             "export PATH=" + this.python + "/bin" + ":$PATH" + ";" +
                             "export LD_LIBRARY_PATH=" + this.python + "/lib" + ":$LD_LIBRARY_PATH" + ";";
             rexports = "export LD_LIBRARY_PATH=" + this.rpath + "/lib" + ":$LD_LIBRARY_PATH" + ";" +
