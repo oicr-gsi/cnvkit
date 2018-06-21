@@ -65,10 +65,10 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private Integer cnvkitMem;
    
     //path to bin
-    private String bin;
+   // private String bin;
 //    private String pypy;
-    private String rScript;
-    private String rLib;
+  //  private String rScript;
+  //  private String rLib;
 
 
     private boolean manualOutput;
@@ -97,7 +97,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
             python = getProperty("PYTHON");
             rpath = getProperty("RPATH");
             pythonexports = "export PYTHONHOME=" + this.python + ":$PYTHONHOME" + ";" + 
-                            "export PATH=" + this.python +":$PATHH" + ";" +
+                            "export PATH=" + this.python +":$PATH" + ";" +
                             "export PATH=" + this.python + "/bin" + ":$PATH" + ";" +
                             "export LD_LIBRARY_PATH=" + this.python + "/lib" + ":$LD_LIBRARY_PATH" + ";";
             rexports = "export PATH=" + this.rpath + ":$PATH" + ";";
@@ -137,7 +137,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         file0.setIsInput(true);
         SqwFile file1 = this.createFile("normal");
         file1.setSourcePath(normal);
-        file1.setType("application/bam");
+        file1.setType("application/cnn");
         file1.setIsInput(true);
         return this.getFiles();
     }
@@ -180,26 +180,21 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         
         
         Job batch = runPipeline();
-        parentJob = batch;
-
+       
         Job scatter = runScatterplot();
-        scatter.addParent(parentJob);
-        parentJob = scatter;
-
-        Job segmetrics = runCalculatesegmetrics();
-        segmetrics.addParent(parentJob);
-        parentJob = segmetrics;
-
-        Job filter = runFilter();
-        filter.addParent(parentJob);
-        parentJob = filter;
-
-        Job diagram = runCleanupdiagram();
-        diagram.addParent(parentJob);
-        parentJob = diagram;
+        scatter.addParent(batch);
         
+        Job segmetrics = runCalculatesegmetrics();
+        segmetrics.addParent(scatter);
+       
+        Job filter = runFilter();
+        filter.addParent(segmetrics);
+       
+        Job diagram = runCleanupdiagram();
+        diagram.addParent(filter);
+              
         Job zipOutput = iterOutputDir(this.outDir);
-        zipOutput.addParent(parentJob);
+        zipOutput.addParent(diagram);
 
         // Provision .seg, .varscanSomatic_confints_CP.txt, model-fit.tar.gz files
         String segFile = this.outputFilenamePrefix + ".seg";
@@ -244,7 +239,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("--rlibpath " + this.rpath);
         cmd.addArgument("--output-dir " + this.outDir);    
         batch.setMaxMemory(Integer.toString(cnvkitMem * 1024));
-        batch.setQueue(getOptionalProperty("queue", ""));
+        batch.setQueue(queue);
         return batch;
     }
 
@@ -257,7 +252,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("-s " + this.tumor + ".cn{s,r}");
         cmd.addArgument("-o " + this.scatterPNGFile); 
         scatter.setMaxMemory(Integer.toString(cnvkitMem * 1024));
-        scatter.setQueue(getOptionalProperty("queue", ""));
+        scatter.setQueue(queue);
         return scatter;
     }
      
@@ -272,7 +267,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("--ci");
         cmd.addArgument("--pi");
         segmetrics.setMaxMemory(Integer.toString(cnvkitMem * 1024));
-        segmetrics.setQueue(getOptionalProperty("queue", ""));
+        segmetrics.setQueue(queue);
         return segmetrics;
     }
 
@@ -286,7 +281,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("--filter ci");
         cmd.addArgument(this.segmentricscnsFile);
         filter.setMaxMemory(Integer.toString(cnvkitMem * 1024));
-        filter.setQueue(getOptionalProperty("queue", ""));
+        filter.setQueue(queue);
         return filter;
     }
       
@@ -298,7 +293,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("cnvkit.py diagram");
         cmd.addArgument("-s " + this.segmetricsCallcnsFile);
         diagram.setMaxMemory(Integer.toString(cnvkitMem * 1024));
-        diagram.setQueue(getOptionalProperty("queue", ""));
+        diagram.setQueue(queue);
         return diagram;
     }
 }
