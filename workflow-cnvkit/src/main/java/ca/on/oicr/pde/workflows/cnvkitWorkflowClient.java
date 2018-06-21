@@ -241,7 +241,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("--scatter");
         cmd.addArgument("--diagram");
         cmd.addArgument("--rlibpath " + this.rpath);
-        cmd.addArgument("--output-dir " + this.filepath);    
+        cmd.addArgument("--output-dir " + this.tmpDir);
         batch.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         batch.setQueue(queue);
         return batch;
