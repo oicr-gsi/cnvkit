@@ -141,7 +141,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         Job parentJob = null;
         this.outDir = this.outputFilenamePrefix + "_output";
         this.bamFile = this.tumor;
-        this.filepath = this.tmpDir + "TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign.recal";
+        this.filepath = this.tmpDir + "TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign";
         this.scatterPNGFile = this.filepath + ".scatter.png";
         this.segmentricscnsFile = this.filepath + ".segmetrics.cns";
         this.segmetricsCallcnsFile = this.filepath + ".segmetrics.call.cns";
