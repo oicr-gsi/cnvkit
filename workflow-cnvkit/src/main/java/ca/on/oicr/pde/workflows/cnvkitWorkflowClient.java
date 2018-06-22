@@ -245,7 +245,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("cnvkit.py call");
         cmd.addArgument("--filter cn");
         cmd.addArgument("--filter ci");
-        cmd.addArgument("tmp/" + this.segmetricscnsFile);
+        cmd.addArgument(this.segmetricscnsFile);
         filter.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         filter.setQueue(queue);
         return filter;
