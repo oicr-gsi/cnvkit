@@ -34,7 +34,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     //cnvkit intermediate file names
     private String bamFile;
     private String scatterPNGFile;
-    private String segmentricscnsFile;
+    private String segmetricscnsFile;
     private String segmetricsCallcnsFile;
     private String filepath;
 
@@ -143,7 +143,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         this.bamFile = this.tumor;
         this.filepath = this.tmpDir + "TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign";
         this.scatterPNGFile = this.filepath + ".scatter.png";
-        this.segmentricscnsFile = this.filepath + ".segmetrics.cns";
+        this.segmetricscnsFile = this.filepath + ".segmetrics.cns";
         this.segmetricsCallcnsFile = this.filepath + ".segmetrics.call.cns";
 
         Job batch = runPipeline();
@@ -245,7 +245,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("cnvkit.py call");
         cmd.addArgument("--filter cn");
         cmd.addArgument("--filter ci");
-        cmd.addArgument(this.segmentricscnsFile);
+        cmd.addArgument("tmp/" + this.segmetricscnsFile);
         filter.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         filter.setQueue(queue);
         return filter;

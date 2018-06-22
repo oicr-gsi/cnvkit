@@ -13,9 +13,9 @@ import org.junit.Assert;
  *
  * @author alka
  */
-public class WorkflowClientTest {
+public class cnvkitWorkflowClientTest {
 
-    public WorkflowClientTest() {
+    public cnvkitWorkflowClientTest() {
     }
 
     @org.testng.annotations.Test
