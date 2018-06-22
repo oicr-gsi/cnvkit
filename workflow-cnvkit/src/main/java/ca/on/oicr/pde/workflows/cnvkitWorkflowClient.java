@@ -1,4 +1,3 @@
-
 package ca.on.oicr.pde.workflows;
 
 import ca.on.oicr.pde.utilities.workflows.OicrWorkflow;
@@ -34,43 +33,19 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
 
     //cnvkit intermediate file names
     private String bamFile;
-   // private String bambaiFile;
-   // private String targetcoverageFile;
-  //  private String antiTargetCoverageFile;
-   // private String cnrFile;
-  //  private String cnsFile;
- //   private String scatterPDFFile;
     private String scatterPNGFile;
-   // private String diagramPDFFile;
     private String segmentricscnsFile;
     private String segmetricsCallcnsFile;
-    //private String segmetricsCallDiagramPDFFile;
     private String filepath;
-    
-    
-    // Output check
-//    private boolean isFolder = true;
-    //Scripts 
-//    private String sequenzaUtil;
-//    private String sequenzaRscript;
- //   private String sequenzav2Script;
-    
+
     //Tools
     private String python;
     private String rpath;
     private String pythonexports;
     private String rexports;
-   
 
     //Memory allocation
     private Integer cnvkitMem;
-   
-    //path to bin
-   // private String bin;
-//    private String pypy;
-  //  private String rScript;
-  //  private String rLib;
-
 
     private boolean manualOutput;
     private static final Logger logger = Logger.getLogger(cnvkitWorkflowClient.class.getName());
@@ -97,15 +72,14 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
             //tools
             python = getProperty("PYTHON");
             rpath = getProperty("RPATH");
-            pythonexports = "export PATH=" + this.python +":$PATH" + ";" +
-                            "export PATH=" + this.python + "/bin" + ":$PATH" + ";" +
-                            "export LD_LIBRARY_PATH=" + this.python + "/lib" + ":$LD_LIBRARY_PATH" + ";";
-            rexports = "export LD_LIBRARY_PATH=" + this.rpath + "/lib" + ":$LD_LIBRARY_PATH" + ";" +
-                       "export PATH=" + this.rpath + ":$PATH" + ";" +
-                       "export PATH=" + this.rpath + "/bin" + ":$PATH" + ";" +
-                       "export MANPATH=" + this.rpath + "/share/man" + ":$MANPATH" + ";";
-           
-          
+            pythonexports = "export PATH=" + this.python + ":$PATH" + ";"
+                    + "export PATH=" + this.python + "/bin" + ":$PATH" + ";"
+                    + "export LD_LIBRARY_PATH=" + this.python + "/lib" + ":$LD_LIBRARY_PATH" + ";";
+            rexports = "export LD_LIBRARY_PATH=" + this.rpath + "/lib" + ":$LD_LIBRARY_PATH" + ";"
+                    + "export PATH=" + this.rpath + ":$PATH" + ";"
+                    + "export PATH=" + this.rpath + "/bin" + ":$PATH" + ";"
+                    + "export MANPATH=" + this.rpath + "/share/man" + ":$MANPATH" + ";";
+
             //r path
             manualOutput = Boolean.parseBoolean(getProperty("manual_output"));
             queue = getOptionalProperty("queue", "");
@@ -113,7 +87,6 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
             //sequenza
             cnvkitMem = Integer.parseInt(getProperty("cnvkit_mem"));
 
-           
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -168,35 +141,25 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         Job parentJob = null;
         this.outDir = this.outputFilenamePrefix + "_output";
         this.bamFile = this.tumor;
-        this.filepath =  this.tmpDir + this.outputFilenamePrefix + "/TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign.recal";
-      //  this.bambaiFile = this.tmpDir + this.outputFilenamePrefix + ".bam.bai";
-      // this.targetcoverageFile = this.tmpDir + this.outputFilenamePrefix + ".targetcoverage.cnn";
-      //  this.antiTargetCoverageFile = this.tmpDir + this.outputFilenamePrefix + ".antitargetcoverage.cnn";
-      //  this.cnrFile = this.tmpDir + this.outputFilenamePrefix + ".cnr";
-      //  this.cnsFile = this.tmpDir + this.outputFilenamePrefix + ".cns";
-      //  this.scatterPDFFile = this.tmpDir + this.outputFilenamePrefix + "-scatter.pdf";
-        this.scatterPNGFile =  this.filepath + ".scatter.png";
-      //  this.diagramPDFFile = this.tmpDir + this.outputFilenamePrefix + "-diagram.pdf";
-       this.segmentricscnsFile = this.filepath + ".segmetrics.cns";
-       this.segmetricsCallcnsFile = this.filepath + ".segmetrics.call.cns";
-       // this.segmetricsCallDiagramPDFFile = this.tmpDir + this.outputFilenamePrefix + ".segmetrics.call-diagram.pdf";
-        
-        
-        
+        this.filepath = this.tmpDir + "TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign.recal";
+        this.scatterPNGFile = this.filepath + ".scatter.png";
+        this.segmentricscnsFile = this.filepath + ".segmetrics.cns";
+        this.segmetricsCallcnsFile = this.filepath + ".segmetrics.call.cns";
+
         Job batch = runPipeline();
-       
+
         Job scatter = runScatterplot();
         scatter.addParent(batch);
-        
+
         Job segmetrics = runCalculatesegmetrics();
         segmetrics.addParent(scatter);
-       
+
         Job filter = runFilter();
         filter.addParent(segmetrics);
-       
+
         Job diagram = runCleanupdiagram();
         diagram.addParent(filter);
-              
+
         Job zipOutput = iterOutputDir(this.outDir);
         zipOutput.addParent(diagram);
 
@@ -205,13 +168,13 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         SqwFile cnSegFile = createOutputFile(this.outDir + "/" + segFile, TXT_METATYPE, this.manualOutput);
         cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit ");
         zipOutput.addFile(cnSegFile);
-        
+
         SqwFile zipFile = createOutputFile(this.outDir + "/" + "model-fit.tar.gz", TAR_GZ_METATYPE, this.manualOutput);
         zipFile.getAnnotations().put("Other files ", "cnvkit ");
         zipOutput.addFile(zipFile);
     }
 
-     private Job iterOutputDir(String outDir) {
+    private Job iterOutputDir(String outDir) {
         /**
          * Method to handle file from the output directory All provision files
          * are in tempDir Create a directory called model-fit in output
@@ -230,7 +193,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         iterOutput.setQueue(getOptionalProperty("queue", ""));
         return iterOutput;
     }
-     
+
     private Job runPipeline() {
         Job batch = getWorkflow().createBashJob("batch");
         Command cmd = batch.getCommand();
@@ -247,21 +210,20 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         return batch;
     }
 
-     private Job runScatterplot() {
+    private Job runScatterplot() {
         Job scatter = getWorkflow().createBashJob("scatter");
         Command cmd = scatter.getCommand();
         cmd.addArgument(this.pythonexports);
         cmd.addArgument(this.rexports);
         cmd.addArgument("cnvkit.py scatter");
-        cmd.addArgument("-s " + this.filepath +".cn{s,r}");
-        cmd.addArgument("-o " + this.scatterPNGFile); 
+        cmd.addArgument("-s " + this.filepath + ".cn{s,r}");
+        cmd.addArgument("-o " + this.scatterPNGFile);
         scatter.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         scatter.setQueue(queue);
         return scatter;
     }
-     
-     
-      private Job runCalculatesegmetrics() {
+
+    private Job runCalculatesegmetrics() {
         Job segmetrics = getWorkflow().createBashJob("segmetrics");
         Command cmd = segmetrics.getCommand();
         cmd.addArgument(this.pythonexports);
@@ -275,7 +237,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         return segmetrics;
     }
 
-      private Job runFilter() {
+    private Job runFilter() {
         Job filter = getWorkflow().createBashJob("filter");
         Command cmd = filter.getCommand();
         cmd.addArgument(this.pythonexports);
@@ -288,8 +250,8 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         filter.setQueue(queue);
         return filter;
     }
-      
-       private Job runCleanupdiagram() {
+
+    private Job runCleanupdiagram() {
         Job diagram = getWorkflow().createBashJob("diagram");
         Command cmd = diagram.getCommand();
         cmd.addArgument(this.pythonexports);
