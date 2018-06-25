@@ -232,6 +232,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("-s " + this.filepath + ".cn{s,r}");
         cmd.addArgument("--ci");
         cmd.addArgument("--pi");
+        cmd.addArgument("-o " + this.filepath + "segmetrics.cns");
         segmetrics.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         segmetrics.setQueue(queue);
         return segmetrics;
