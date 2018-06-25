@@ -247,6 +247,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("--filter cn");
         cmd.addArgument("--filter ci");
         cmd.addArgument(this.segmetricscnsFile);
+        cmd.addArgument("-o " + this.filepath + ".segmetrics.call.cns");
         filter.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         filter.setQueue(queue);
         return filter;
@@ -259,6 +260,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument(this.rexports);
         cmd.addArgument("cnvkit.py diagram");
         cmd.addArgument("-s " + this.segmetricsCallcnsFile);
+        cmd.addArgument("-o " + this.segmetricsCallcnsFile);
         diagram.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         diagram.setQueue(queue);
         return diagram;
