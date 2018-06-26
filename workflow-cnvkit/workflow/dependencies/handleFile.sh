@@ -1,16 +1,13 @@
 #!/bin/bash
-wdPath=`pwd`
-echo $wdPath
-extid=$1
-inPath=$wdPath/$2
-cd $inPath
-model=model-fit; mkdir $model
-EXTT=sample
+wdPath=`pwd`/tmp
+model=$wdPath/model-fit;
+mkdir -p $model
 
 
-for f in ( $ls ); do
-        if [[ -d $f ]]; then
-                if [[ $f != "model-fit" ]]; then
+
+for f in ( `ls $wdPath` ); do
+        if [[ -d $f ]]; then #check if directory
+                if [[ $f != "model-fit" ]]; then 
                         cd $inPath
                         mv $f $model
                 fi
@@ -23,7 +20,6 @@ for f in ( $ls ); do
 done
 
 cd $model
-cd $inPath
 tar -zcvf ${model}.tar.gz $model
 
 
