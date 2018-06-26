@@ -52,9 +52,10 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private String queue;
     private Map<String, SqwFile> tempFiles;
 
-    // meta-types
+     // meta-types
     private final static String TXT_METATYPE = "text/plain";
     private final static String TAR_GZ_METATYPE = "application/tar-gzip";
+    private static final String FASTQ_GZIP_MIMETYPE = "chemical/seq-na-fastq-gzip";
 
     private void init() {
         try {
@@ -164,7 +165,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         zipOutput.addParent(diagram);
 
         // Provision .seg, .varscanSomatic_confints_CP.txt, model-fit.tar.gz files
-         String segFile = this.outputFilenamePrefix + ".seg";
+        String segFile = this.outputFilenamePrefix + ".seg";
         SqwFile cnSegFile = createOutputFile(this.outDir + "/" + segFile, TXT_METATYPE, this.manualOutput);
         cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit ");
         zipOutput.addFile(cnSegFile);
