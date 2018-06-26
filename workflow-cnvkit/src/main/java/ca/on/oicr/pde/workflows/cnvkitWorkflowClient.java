@@ -164,7 +164,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         zipOutput.addParent(diagram);
 
         // Provision .seg, .varscanSomatic_confints_CP.txt, model-fit.tar.gz files
-        String segFile = this.outputFilenamePrefix + ".seg";
+         String segFile = this.outputFilenamePrefix + ".seg";
         SqwFile cnSegFile = createOutputFile(this.outDir + "/" + segFile, TXT_METATYPE, this.manualOutput);
         cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit ");
         zipOutput.addFile(cnSegFile);

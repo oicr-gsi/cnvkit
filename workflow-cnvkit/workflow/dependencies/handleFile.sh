@@ -8,7 +8,7 @@ model=model-fit; mkdir $model
 EXTT=sample
 
 
-for f in $( ls ); do
+for f in ( $ls ); do
         if [[ -d $f ]]; then
                 if [[ $f != "model-fit" ]]; then
                         cd $inPath
