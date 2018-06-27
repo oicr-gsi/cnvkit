@@ -30,6 +30,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private String tumor;
     private String normal;
     private String outputFilenamePrefix;
+    private String sampleName;
 
     //cnvkit intermediate file names
     private String bamFile;
@@ -66,6 +67,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
             // input samples 
             tumor = getProperty("input_files_tumor");
             normal = getProperty("input_files_normal");
+            sampleName = getProperty("sample_name");
 
             //Ext id
             outputFilenamePrefix = getProperty("external_name");
@@ -123,14 +125,14 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     public void buildWorkflow() {
 
         /**
-         * Steps for sequenza: 
+         * Steps for cnvkit: 
          */
-        // workflow : read inputs tumor and normal bam; run sequenza-utils; write the output to temp directory; 
-        // run sequenzaR; handle output; provision files (3) -- model-fit.zip; text/plain; text/plain
+        // workflow : read inputs tumor bam and cnn file; run cnvkit; write the output to temp directory; 
+        // run handle output script; provision files (2) -- model-fit.zip; text/plain; 
         Job parentJob = null;
         this.outDir = this.outputFilenamePrefix + "_output";
         this.bamFile = this.tumor;
-        this.filepath = this.tmpDir + "TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign";
+        this.filepath = this.tmpDir + this.sampleName;
         this.scatterPNGFile = this.filepath + ".scatter.png";
         this.segmetricscnsFile = this.filepath + ".segmetrics.cns";
         this.segmetricsCallcnsFile = this.filepath + ".segmetrics.call.cns";
@@ -152,7 +154,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         Job zipOutput = iterOutputDir(this.outDir);
         zipOutput.addParent(diagram);
 
-        // Provision .seg, .varscanSomatic_confints_CP.txt, model-fit.tar.gz files
+        // Provision .seg, model-fit.tar.gz files
         String segFile = this.outputFilenamePrefix + ".seg";
         SqwFile cnSegFile = createOutputFile(this.tmpDir + segFile, TXT_METATYPE, this.manualOutput);
         cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit ");
@@ -168,8 +170,9 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
          * Method to handle file from the output directory All provision files
          * are in tempDir Create a directory called model-fit in output
          * directory move the subfolders into it move files with the following
-         * extentions to model-fit "_log.txt", ".pdf", "_solutions.txt",
-         * "_CP.txt", "_mutations.txt", "segments.txt", ".RData" construct a cmd
+         * extentions to model-fit ".antitargetcoverage.cnn", ".cnr", ".cns",
+         * "-diagram.pdf", "-scatter.pdf", ".scatter.png", ".segmetrics.cns",
+         * "targetcoverage.cnn", adn construct a cmd
          * string to zip the model-fit folder
          */
         // find only folders in the output Directory

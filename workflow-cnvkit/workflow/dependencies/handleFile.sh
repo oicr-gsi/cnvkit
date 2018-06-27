@@ -5,7 +5,7 @@ mkdir -p $model
 EXTT=cnvkit
 cd $wdPath
 
-for f in $( ls); do
+for f in $( ls ); do
         if [[ -d $f ]]; then #check if directory
                 if [[ $f != "model-fit" ]]; then 
                         cd $wdPath
