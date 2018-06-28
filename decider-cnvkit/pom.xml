@@ -17,7 +17,7 @@
 
     <properties>
         <workflow-version>1.0</workflow-version>
-        <main-class>ca.on.oicr.pde.deciders.CNVkitDecider</main-class>
+        <main-class>ca.on.oicr.pde.deciders.cnvkitDecider</main-class>
     </properties>
     
     <dependencies>
