@@ -65,12 +65,12 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
             tmpDir = getProperty("tmp_dir");
 
             // input samples 
-            tumor = getProperty("input_files_tumor");
+            tumor = getProperty("input_bam_file");
             normal = getProperty("input_files_normal");
             sampleName = getProperty("sample_name");
 
             //Ext id
-            outputFilenamePrefix = getProperty("external_name");
+            outputFilenamePrefix = getProperty("output_filename_prefix");
 
             //tools
             python = getProperty("PYTHON");

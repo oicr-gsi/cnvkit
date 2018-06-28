@@ -10,8 +10,8 @@
         {
             "id": "workflow_test_01",
             "parameters": {
-                "input_files_tumor": "/.mounts/labs/PDE/data/testdata/genomic/bam/TGL_test/Sequenza/TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign.recal.bam",
-                "external_name": "cnvkit"
+                "input_bam_file": "/.mounts/labs/PDE/data/testdata/genomic/bam/TGL_test/Sequenza/TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign.recal.bam",
+                "output_filename_prefix": "cnvkit"
             }
         }
     ]

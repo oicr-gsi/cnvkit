@@ -18,6 +18,6 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <workflow-name>cnvkit</workflow-name>
+        <workflow-name>CNVkit</workflow-name>
     </properties>
 </project>
