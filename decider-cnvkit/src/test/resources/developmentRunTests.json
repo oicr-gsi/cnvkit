@@ -13,8 +13,7 @@
         {
             "id": "study test",
             "parameters": {
-                "--study-name": "TGL07",
-                "--template-type": "WT"
+                "--study-name": "TGL07"
             }
         },
         {

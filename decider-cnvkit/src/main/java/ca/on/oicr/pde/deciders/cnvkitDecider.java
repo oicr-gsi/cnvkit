@@ -18,19 +18,21 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  *
- * @author prath@oicr.on.ca
+ * @author abenawra@oicr.on.ca
  */
 public class cnvkitDecider extends OicrDecider {
-
     private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
     private Map<String, BeSmall> fileSwaToSmall;
 
-    private String templateType = null;
+    private String templateType = "EX";
     private String queue = "";
     private String baseName;
     private int coverageCap = 500;
     private float minPCT = (float) 0.5;
     private String stringency = "LENIENT";
+    private String cnvkitmem = "30";
+    private String samplename = "TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign";
+    
     
 
     private final static String BAM_METATYPE = "application/bam";
@@ -68,10 +70,15 @@ public class cnvkitDecider extends OicrDecider {
 
         if (this.options.has("template-type")) {
             this.templateType = options.valueOf("template-type").toString();
+            if (this.templateType != "EX"){ // check for template type
+                Log.error("Wrong template type; Runs only for EX");
+                rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
+                return rv;
+            }
         } else {
             if (!options.hasArgument("template-type")) {
 
-                Log.error("--template-type requires an argument, e.g. EX,WT");
+                Log.error("--template-type requires an argument, e.g. EX");
                 rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
                 return rv;
             }
@@ -103,7 +110,7 @@ public class cnvkitDecider extends OicrDecider {
                 }
                 String tt = bs.getTissueType();
 
-                if (!tt.isEmpty()) {
+                if (!tt.isEmpty() && !tt.equals("R")) {
                     haveBam = true;
                 }
             }
@@ -242,13 +249,12 @@ public class cnvkitDecider extends OicrDecider {
         iniFileMap.put("data_dir", "data");
         iniFileMap.put("template_type", this.templateType);
         iniFileMap.put("output_filename_prefix", this.baseName);
+        iniFileMap.put("cnvkit_mem", this.cnvkitmem);
+        iniFileMap.put("sample_name", this.samplename);
 
         if (!this.queue.isEmpty()) {
             iniFileMap.put("queue", this.queue);
         }
-        iniFileMap.put("coverage_cap", Integer.toString(this.coverageCap));
-        iniFileMap.put("stringency_filter", this.stringency);
-        iniFileMap.put("minimum_pct", Float.toString(this.minPCT));
         return iniFileMap;
                 
 
