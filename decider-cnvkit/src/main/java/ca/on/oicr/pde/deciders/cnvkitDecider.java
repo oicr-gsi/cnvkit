@@ -27,11 +27,9 @@ public class cnvkitDecider extends OicrDecider {
     private String templateType = "EX";
     private String queue = "";
     private String baseName;
-    private int coverageCap = 500;
-    private float minPCT = (float) 0.5;
-    private String stringency = "LENIENT";
+
     private String cnvkitmem = "30";
-    private String samplename = "TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign";
+    private String samplename;
     
     
 
@@ -70,7 +68,7 @@ public class cnvkitDecider extends OicrDecider {
 
         if (this.options.has("template-type")) {
             this.templateType = options.valueOf("template-type").toString();
-            if (this.templateType != "EX"){ // check for template type
+            if (!this.templateType.equals("EX")){ // check for template type
                 Log.error("Wrong template type; Runs only for EX");
                 rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
                 return rv;

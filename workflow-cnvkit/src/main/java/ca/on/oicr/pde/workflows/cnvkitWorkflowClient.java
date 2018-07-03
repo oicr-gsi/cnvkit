@@ -42,8 +42,8 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     //Tools
     private String python;
     private String rpath;
-    private String pythonexports;
-    private String rexports;
+    private String pythonExports;
+    private String rExports;
 
     //Memory allocation
     private Integer cnvkitMem;
@@ -75,13 +75,53 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
             //tools
             python = getProperty("PYTHON");
             rpath = getProperty("RPATH");
-            pythonexports = "export PATH=" + this.python + ":$PATH" + ";"
-                    + "export PATH=" + this.python + "/bin" + ":$PATH" + ";"
-                    + "export LD_LIBRARY_PATH=" + this.python + "/lib" + ":$LD_LIBRARY_PATH" + ";";
-            rexports = "export LD_LIBRARY_PATH=" + this.rpath + "/lib" + ":$LD_LIBRARY_PATH" + ";"
-                    + "export PATH=" + this.rpath + ":$PATH" + ";"
-                    + "export PATH=" + this.rpath + "/bin" + ":$PATH" + ";"
-                    + "export MANPATH=" + this.rpath + "/share/man" + ":$MANPATH" + ";";
+            StringBuilder pyB = new StringBuilder();
+            pyB.append("export PATH=");
+            pyB.append(this.python);
+            pyB.append(":$PATH");
+            pyB.append(";");
+            pyB.append("export PATH=");
+            pyB.append(this.python);
+            pyB.append("/bin");
+            pyB.append(":$PATH");
+            pyB.append(";");
+            pyB.append("export LD_LIBRARY_PATH=");
+            pyB.append(this.python);
+            pyB.append("/lib");
+            pyB.append(":$LD_LIBRARY_PATH");
+            pyB.append(";");   
+            pythonExports = pyB.toString(); // new pythonExports
+            // CONVERT to pyB pythonExports = "export PATH=" + this.python + ":$PATH" + ";"
+//                    + "export PATH=" + this.python + "/bin" + ":$PATH" + ";"
+//                    + "export LD_LIBRARY_PATH=" + this.python + "/lib" + ":$LD_LIBRARY_PATH" + ";";
+//            
+            StringBuilder rB = new StringBuilder();
+            rB.append("export LD_LIBRARY_PATH=");
+            rB.append(this.rpath);
+            rB.append("/lib");
+            rB.append(":$LD_LIBRARY_PATH");
+            rB.append(";"); 
+            rB.append("export PATH=");
+            rB.append(this.rpath);
+            rB.append(":$PATH" );
+            rB.append(";");
+            rB.append("export PATH=");
+            rB.append(this.rpath);
+            rB.append("/bin");
+            rB.append(":$PATH");
+            rB.append(";");
+            rB.append("export MANPATH=");
+            rB.append(this.rpath);
+            rB.append("/share/man");
+            rB.append(":$MANPATH");
+            rB.append(";");
+            rExports = rB.toString();
+            
+//            convert to rB and toString()
+//            rExports = "export LD_LIBRARY_PATH=" + this.rpath + "/lib" + ":$LD_LIBRARY_PATH" + ";"
+//                    + "export PATH=" + this.rpath + ":$PATH" + ";"
+//                    + "export PATH=" + this.rpath + "/bin" + ":$PATH" + ";"
+//                    + "export MANPATH=" + this.rpath + "/share/man" + ":$MANPATH" + ";";
 
             //r path
             manualOutput = Boolean.parseBoolean(getProperty("manual_output"));
@@ -189,8 +229,8 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private Job runPipeline() {
         Job batch = getWorkflow().createBashJob("batch");
         Command cmd = batch.getCommand();
-        cmd.addArgument(this.pythonexports);
-        cmd.addArgument(this.rexports);
+        cmd.addArgument(this.pythonExports);
+        cmd.addArgument(this.rExports);
         cmd.addArgument("cnvkit.py batch " + this.bamFile);
         cmd.addArgument("--reference " + this.normal);
         cmd.addArgument("--scatter");
@@ -205,8 +245,8 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private Job runScatterplot() {
         Job scatter = getWorkflow().createBashJob("scatter");
         Command cmd = scatter.getCommand();
-        cmd.addArgument(this.pythonexports);
-        cmd.addArgument(this.rexports);
+        cmd.addArgument(this.pythonExports);
+        cmd.addArgument(this.rExports);
         cmd.addArgument("cnvkit.py scatter");
         cmd.addArgument("-s " + this.filepath + ".cn{s,r}");
         cmd.addArgument("-o " + this.scatterPNGFile);
@@ -218,8 +258,8 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private Job runCalculatesegmetrics() {
         Job segmetrics = getWorkflow().createBashJob("segmetrics");
         Command cmd = segmetrics.getCommand();
-        cmd.addArgument(this.pythonexports);
-        cmd.addArgument(this.rexports);
+        cmd.addArgument(this.pythonExports);
+        cmd.addArgument(this.rExports);
         cmd.addArgument("cnvkit.py segmetrics");
         cmd.addArgument("-s " + this.filepath + ".cn{s,r}");
         cmd.addArgument("--ci");
@@ -233,8 +273,8 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private Job runFilter() {
         Job filter = getWorkflow().createBashJob("filter");
         Command cmd = filter.getCommand();
-        cmd.addArgument(this.pythonexports);
-        cmd.addArgument(this.rexports);
+        cmd.addArgument(this.pythonExports);
+        cmd.addArgument(this.rExports);
         cmd.addArgument("cnvkit.py call");
         cmd.addArgument("--filter cn");
         cmd.addArgument("--filter ci");
@@ -248,8 +288,8 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     private Job runCleanupdiagram() {
         Job diagram = getWorkflow().createBashJob("diagram");
         Command cmd = diagram.getCommand();
-        cmd.addArgument(this.pythonexports);
-        cmd.addArgument(this.rexports);
+        cmd.addArgument(this.pythonExports);
+        cmd.addArgument(this.rExports);
         cmd.addArgument("cnvkit.py diagram");
         cmd.addArgument("-s " + this.segmetricsCallcnsFile);
         cmd.addArgument("-o " + this.segmetricsCallcnsFile);
