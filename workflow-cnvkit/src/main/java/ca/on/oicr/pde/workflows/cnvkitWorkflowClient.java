@@ -181,6 +181,10 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         Job diagram = runCleanupDiagram();
         diagram.addParent(parentJob);
         parentJob = diagram;
+        
+        Job makeSegFile = createSegFile();
+        makeSegFile.addParent(parentJob);
+        parentJob = makeSegFile;
 
         Job zipOutput = iterOutputDir();
         zipOutput.addParent(parentJob);
@@ -288,16 +292,16 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     }
 
     private Job createSegFile() {
-        Job segFile = getWorkflow().createBashJob("segFile");
-        Command cmd = segFile.getCommand();
+        Job makeSegFile = getWorkflow().createBashJob("segFile");
+        Command cmd = makeSegFile.getCommand();
         cmd.addArgument(this.pythonExports);
         cmd.addArgument(this.rExports);
         cmd.addArgument("cnvkit.py export seg " + this.segmetricsCallCnsFile);
         cmd.addArgument("--enumerate-chroms");
         cmd.addArgument("-o " + this.filePath + ".seg");
-        segFile.setMaxMemory(Integer.toString(cnvkitMem * 1024));
-        segFile.setQueue(queue);
-        return segFile;
+        makeSegFile.setMaxMemory(Integer.toString(cnvkitMem * 1024));
+        makeSegFile.setQueue(queue);
+        return makeSegFile;
     }
 }
 

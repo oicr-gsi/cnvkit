@@ -2,7 +2,6 @@
 wdPath=`pwd`/tmp
 model=$wdPath/model-fit;
 mkdir -p $model
-sampleName=EXTT
 cd $wdPath
 
 for f in $( ls ); do
@@ -11,9 +10,12 @@ for f in $( ls ); do
                         cd $wdPath
                         mv $f $model
                 fi
-        else if [[ ${f: -20} != ".segmetrics.call.cns" ]]; then
+        else 
+            if [[ ${f: -4} != ".seg" ]]; then
+                 cd $wdPath  
                  mv $f $model
-        fi
+  		fi 
+	fi
 done
 
 cd $wdPath 
