@@ -11,7 +11,7 @@
             "id": "workflow_test_01",
             "parameters": {
                 "input_bam_file": "/.mounts/labs/PDE/data/testdata/genomic/bam/TGL_test/Sequenza/TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign.recal.bam",
-                "output_filename_prefix": "cnvkit"
+                "output_filename_prefix": "TGL01_0001_Sk_M_PE_426_EX.sorted.filter.deduped.realign"
             }
         }
     ]

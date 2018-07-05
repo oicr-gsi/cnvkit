@@ -21,6 +21,7 @@ import org.apache.commons.lang3.StringUtils;
  * @author abenawra@oicr.on.ca
  */
 public class cnvkitDecider extends OicrDecider {
+
     private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
     private Map<String, BeSmall> fileSwaToSmall;
 
@@ -30,20 +31,15 @@ public class cnvkitDecider extends OicrDecider {
 
     private String cnvkitmem = "30";
     private String samplename;
-    
-    
 
     private final static String BAM_METATYPE = "application/bam";
     private String tumorType;
-//    private String templateType;
-//    private List<String> duplicates;
 
     public cnvkitDecider() {
         super();
         fileSwaToSmall = new HashMap<String, BeSmall>();
         parser.acceptsAll(Arrays.asList("ini-file"), "Optional: the location of the INI file.").withRequiredArg();
-        parser.accepts("template-type", "Required. Set the template type to limit the workflow run "
-                + "so that it runs on data only of this template type").withRequiredArg();
+        parser.accepts("template-type", "Required. Set the template type to limit the workflow run so that it runs on data only of this template type").withRequiredArg();
         parser.accepts("queue", "Optional: Set the queue (Default: not set)").withRequiredArg();
         parser.accepts("tumor-type", "Optional: Set tumor tissue type to something other than primary tumor (P), i.e. X . Default: Not set (All)").withRequiredArg();
     }
@@ -68,7 +64,7 @@ public class cnvkitDecider extends OicrDecider {
 
         if (this.options.has("template-type")) {
             this.templateType = options.valueOf("template-type").toString();
-            if (!this.templateType.equals("EX")){ // check for template type
+            if (!this.templateType.equals("EX")) { // check for template type
                 Log.error("Wrong template type; Runs only for EX");
                 rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
                 return rv;
@@ -99,7 +95,6 @@ public class cnvkitDecider extends OicrDecider {
         boolean haveBam = false;
 
         // Check for duplicate file names and exclude them from analysis
-
         for (String p : filePaths) {
 
             for (BeSmall bs : fileSwaToSmall.values()) {
@@ -115,7 +110,7 @@ public class cnvkitDecider extends OicrDecider {
         }
         if (haveBam && (filePaths.length == 1)) { // check one file per filePaths
             return super.doFinalCheck(commaSeparatedFilePaths, commaSeparatedParentAccessions);
-        } 
+        }
         Log.error("Data not available, WON'T RUN");
         return new ReturnValue(ReturnValue.INVALIDPARAMETERS);
     }
@@ -235,8 +230,7 @@ public class cnvkitDecider extends OicrDecider {
                     Log.stdout("WRITING TO INI FILE ... " + bs.getPath());
                     this.baseName = FilenameUtils.getBaseName(bs.getPath());
                     inputBam = bs.getPath();
-                }  
-                else{
+                } else {
                     Log.error("THE DONOR does not have data to run the workflow");
                     abortSchedulingOfCurrentWorkflowRun();
                 }
@@ -254,7 +248,6 @@ public class cnvkitDecider extends OicrDecider {
             iniFileMap.put("queue", this.queue);
         }
         return iniFileMap;
-                
 
 //        return super.modifyIniFile(commaSeparatedFilePaths, commaSeparatedParentAccessions);
     }
@@ -270,7 +263,6 @@ public class cnvkitDecider extends OicrDecider {
         net.sourceforge.seqware.pipeline.runner.PluginRunner.main(params.toArray(new String[params.size()]));
 
     }
-
 
     private class BeSmall {
 

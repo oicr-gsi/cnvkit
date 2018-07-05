@@ -23,13 +23,6 @@
                 "--study-name": "TGL17",
                 "--template-type": "EX"
             }
-        },
-        {
-            "id": "TGL17_WT",
-            "parameters": {
-                "--study-name": "TGL17",
-                "--template-type": "WT"
-            }
         }
     ]
 }
