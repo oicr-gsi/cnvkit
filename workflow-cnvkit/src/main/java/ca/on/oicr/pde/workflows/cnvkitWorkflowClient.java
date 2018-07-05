@@ -292,7 +292,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
     }
 
     private Job createSegFile() {
-        Job makeSegFile = getWorkflow().createBashJob("segFile");
+        Job makeSegFile = getWorkflow().createBashJob("makeSegFile");
         Command cmd = makeSegFile.getCommand();
         cmd.addArgument(this.pythonExports);
         cmd.addArgument(this.rExports);
