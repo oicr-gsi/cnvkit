@@ -296,7 +296,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         Command cmd = makeSegFile.getCommand();
         cmd.addArgument(this.pythonExports);
         cmd.addArgument(this.rExports);
-        cmd.addArgument("cnvkit.py export seg " + this.segmetricsCallCnsFile);
+        cmd.addArgument("cnvkit.py export seg " + this.segmetricsCnsFile );
         cmd.addArgument("--enumerate-chroms");
         cmd.addArgument("-o " + this.filePath + ".seg");
         makeSegFile.setMaxMemory(Integer.toString(cnvkitMem * 1024));
