@@ -145,6 +145,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         file1.setSourcePath(normal);
         file1.setType("application/cnn");
         file1.setIsInput(true);
+        tumor.add(file0.getProvisionedPath());
         return this.getFiles();
     }
 
@@ -224,7 +225,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         Command cmd = batch.getCommand();
         cmd.addArgument(this.pythonExports);
         cmd.addArgument(this.rExports);
-        cmd.addArgument("cnvkit.py batch " + this.bamFile);
+        cmd.addArgument("cnvkit.py batch " + getFiles().get("tumor").getProvisionedPath());
         cmd.addArgument("--reference " + this.normal);
         cmd.addArgument("--scatter");
         cmd.addArgument("--diagram");
