@@ -1,6 +1,6 @@
 {
     "defaults": {
-        "description": "HSMetrics decider test",
+        "description": "CNVKIT decider test",
         "metricsResources": "/expected_output/development/",
         "parameters": {
             "--parent-wf-accessions": "9532886,10237604,10345255"

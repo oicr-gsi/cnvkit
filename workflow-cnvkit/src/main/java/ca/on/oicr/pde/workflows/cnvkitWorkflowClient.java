@@ -157,7 +157,6 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         // workflow : read inputs tumor bam and cnn file; run cnvkit; write the output to temp directory; 
         // run handle output script; provision files (2) -- model-fit.zip; text/plain; 
       
-        this.bamFile = this.tumor;
         this.filePath = this.tmpDir + this.sampleName;
         this.scatterPngFile = this.filePath + ".scatter.png";
         this.segmetricsCnsFile = this.filePath + ".segmetrics.cns";
