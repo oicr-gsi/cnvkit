@@ -240,7 +240,7 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument(this.pythonExports);
         cmd.addArgument(this.rExports);
         cmd.addArgument("cnvkit.py scatter");
-        cmd.addArgument("-s " + this.filePath +".cn{s,r}");
+        cmd.addArgument("-s " + this.filePath + ".cn{s,r}");
         cmd.addArgument("-o " + this.scatterPngFile);
         scatter.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         scatter.setQueue(queue);
