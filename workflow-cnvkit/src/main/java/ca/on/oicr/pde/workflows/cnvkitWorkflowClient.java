@@ -191,28 +191,23 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         // Provision .seg, model-fit.tar.gz files
         String segFile = this.sampleName + ".seg";
         SqwFile cnSegFile = createOutputFile(this.tmpDir + segFile, TXT_METATYPE, this.manualOutput);
-        cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit ");
+        cnSegFile.getAnnotations().put("segment data from the tool ", "CNVkit");
         zipOutput.addFile(cnSegFile);
 
-        SqwFile zipFile = createOutputFile(this.tmpDir + "model-fit.tar.gz", TAR_GZ_METATYPE, this.manualOutput);
-        zipFile.getAnnotations().put("Other files ", "cnvkit ");
+        SqwFile zipFile = createOutputFile(this.dataDir + "model-fit.tar.gz", TAR_GZ_METATYPE, this.manualOutput);
+        zipFile.getAnnotations().put("Other files ", "cnvkit");
         zipOutput.addFile(zipFile);
     }
 
     private Job iterOutputDir() {
-        /**
-         * Method to handle file from the output directory All provision files
-         * are in tempDir Create a directory called model-fit in output
-         * directory move the subfolders into it move files with the following
-         * extentions to model-fit ".antitargetcoverage.cnn", ".cnr", ".cns",
-         * "-diagram.pdf", "-scatter.pdf", ".scatter.png", ".segmetrics.cns",
-         * "targetcoverage.cnn", adn construct a cmd string to zip the model-fit
-         * folder
-         */
-        // find only folders in the output Directory
+        //compress all files (except .seg) in the tmpDir/working dir to "model-fit.tar.gz"
         Job iterOutput = getWorkflow().createBashJob("handle_output");
         Command cmd = iterOutput.getCommand();
-        cmd.addArgument("bash -x " + getWorkflowBaseDir() + "/dependencies/handleFile.sh");
+        cmd.addArgument("tar -zcvf");
+        cmd.addArgument(dataDir + "model-fit.tar.gz");
+        cmd.addArgument("--transform \"s/" + tmpDir.replace("/", "") + "/model-fit/\"");
+        cmd.addArgument("--exclude " + sampleName + ".seg");
+        cmd.addArgument(tmpDir + "*");
         iterOutput.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         iterOutput.setQueue(getOptionalProperty("queue", ""));
         return iterOutput;
