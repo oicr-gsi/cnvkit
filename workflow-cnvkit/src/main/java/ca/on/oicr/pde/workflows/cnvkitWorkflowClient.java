@@ -229,6 +229,10 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument("--diagram");
         cmd.addArgument("--rlibpath " + this.rPath);
         cmd.addArgument("--output-dir " + this.tmpDir);
+        cmd.addArgument(";");
+        // cnvkit changes output file names, change them back
+        cmd.addArgument("mv " + this.tmpDir + "/*.cns " + this.filePath + ".cns;");
+        cmd.addArgument("mv " + this.tmpDir + "/*.cnr " + this.filePath + ".cnr;");
         batch.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         batch.setQueue(queue);
         return batch;
