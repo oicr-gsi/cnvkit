@@ -10,6 +10,9 @@
   "maxInputFiles" : 1,
   "minInputFiles" : 1,
   "totalInputFiles" : 7,
+  "maxOutputFileProvenanceRecords" : 1,
+  "minOutputFileProvenanceRecords" : 1,
+  "totalOutputFileProvenanceRecords" : 7,
   "workflowRuns" : [ {
     "workflowIni" : {
       "cnvkit_mem" : "30",
@@ -65,7 +68,8 @@
         "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
       },
       "fileId" : 271791431
-    } ]
+    } ],
+    "outputFileProvenanceRecords" : 1
   }, {
     "workflowIni" : {
       "cnvkit_mem" : "30",
@@ -121,7 +125,8 @@
         "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
       },
       "fileId" : -853295313
-    } ]
+    } ],
+    "outputFileProvenanceRecords" : 1
   }, {
     "workflowIni" : {
       "cnvkit_mem" : "30",
@@ -177,7 +182,8 @@
         "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
       },
       "fileId" : 1082364974
-    } ]
+    } ],
+    "outputFileProvenanceRecords" : 1
   }, {
     "workflowIni" : {
       "cnvkit_mem" : "30",
@@ -233,7 +239,8 @@
         "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
       },
       "fileId" : 1500217785
-    } ]
+    } ],
+    "outputFileProvenanceRecords" : 1
   }, {
     "workflowIni" : {
       "cnvkit_mem" : "30",
@@ -289,7 +296,8 @@
         "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
       },
       "fileId" : 1791063933
-    } ]
+    } ],
+    "outputFileProvenanceRecords" : 1
   }, {
     "workflowIni" : {
       "cnvkit_mem" : "30",
@@ -345,7 +353,8 @@
         "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
       },
       "fileId" : 572843577
-    } ]
+    } ],
+    "outputFileProvenanceRecords" : 1
   }, {
     "workflowIni" : {
       "cnvkit_mem" : "30",
@@ -401,6 +410,7 @@
         "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
       },
       "fileId" : -1362816710
-    } ]
+    } ],
+    "outputFileProvenanceRecords" : 1
   } ]
 }
