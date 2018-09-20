@@ -1,0 +1,1100 @@
+{
+  "workflowRunCount" : 19,
+  "studies" : [ "TGL07" ],
+  "sequencerRuns" : [ "171013_D00343_0195_BCBGVHANXX", "171206_D00331_0288_ACBG0BANXX", "171206_D00331_0289_BCBH0FANXX" ],
+  "lanes" : [ "171013_D00343_0195_BCBGVHANXX_lane_5", "171013_D00343_0195_BCBGVHANXX_lane_6", "171206_D00331_0288_ACBG0BANXX_lane_5", "171206_D00331_0288_ACBG0BANXX_lane_6", "171206_D00331_0288_ACBG0BANXX_lane_7", "171206_D00331_0289_BCBH0FANXX_lane_1", "171206_D00331_0289_BCBH0FANXX_lane_2" ],
+  "samples" : [ "TGL07_0001_Co_P_PE_387_EX", "TGL07_0002_Sb_P_PE_390_EX", "TGL07_0003_Ut_P_PE_324_EX", "TGL07_0004_Ov_P_PE_443_EX", "TGL07_0005_Om_M_PE_462_EX", "TGL07_0006_Lv_M_PE_482_EX", "TGL07_0007_Bn_M_PE_476_EX", "TGL07_0008_Sk_P_PE_465_EX", "TGL07_0009_Bl_P_PE_486_EX", "TGL07_0010_Sb_M_PE_441_EX", "TGL07_0011_Um_M_PE_352_EX", "TGL07_0012_Ln_M_PE_455_EX", "TGL07_0013_Vg_P_PE_460_EX", "TGL07_0014_Ce_P_PE_434_EX", "TGL07_0015_Um_M_PE_453_EX", "TGL07_0016_Om_M_PE_492_EX", "TGL07_0017_Co_P_PE_399_EX", "TGL07_0018_Lv_M_PE_333_EX", "TGL07_0019_Ut_P_PE_445_EX" ],
+  "workflows" : [ "BamMergePreprocessing" ],
+  "processingAlgorithms" : [ "ProvisionFiles" ],
+  "fileMetaTypes" : [ "application/bam" ],
+  "maxInputFiles" : 1,
+  "minInputFiles" : 1,
+  "totalInputFiles" : 19,
+  "maxOutputFileProvenanceRecords" : 1,
+  "minOutputFileProvenanceRecords" : 1,
+  "totalOutputFileProvenanceRecords" : 19,
+  "workflowRuns" : [ {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/52105719/TGL07_0001_Lu_M_EX_171106.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0001_Lu_M_EX_171106.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0001_Co_P_PE_387_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00278" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lu" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAAGACTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 2060264280
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/26732871/TGL07_0002_Sb_P_EX_171106.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0002_Sb_P_EX_171106.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0002_Sb_P_PE_390_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00510" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_2" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_2" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCCTGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 425892538
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/17761793/TGL07_0003_Ut_P_EX_171106.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0003_Ut_P_EX_171106.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0003_Ut_P_PE_324_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00518" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_2" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_2" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGGTGGTA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 1497066926
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/56001359/TGL07_0004_Ov_P_EX_171106.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0004_Ov_P_EX_171106.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0004_Ov_P_PE_443_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00555" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ov" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AAGAGATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : -2022458697
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/10896053/TGL07_0005_Om_M_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0005_Om_M_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0005_Om_M_PE_462_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00826" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AATGTTGC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : -749501195
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/88749656/TGL07_0006_Lv_M_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0006_Lv_M_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0006_Lv_M_PE_482_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00867" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AGATCGCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 1650941539
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/41011983/TGL07_0007_Bn_M_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0007_Bn_M_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0007_Bn_M_PE_476_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00943" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bn" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAACCACA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 788995338
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/63978153/TGL07_0008_Sk_P_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0008_Sk_P_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0008_Sk_P_PE_465_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00961" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sk" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCTATC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : -403791863
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/18218242/TGL07_0009_Bl_P_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0009_Bl_P_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0009_Bl_P_PE_486_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01178" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2883_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Bl" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171013_D00343_0195_BCBGVHANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00343" ] ]
+      },
+      "laneName" : [ "171013_D00343_0195_BCBGVHANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCAGTTCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : -1348218106
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/53934756/TGL07_0010_Sb_M_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0010_Sb_M_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0010_Sb_M_PE_441_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01710" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Sb" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACACAGAA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : -223673616
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/47601400/TGL07_0011_Um_M_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0011_Um_M_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0011_Um_M_PE_352_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01743" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_7" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Um" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_7" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AACCGAGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 1471461724
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/93388010/TGL07_0012_Ln_M_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0012_Ln_M_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0012_Ln_M_PE_455_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01296" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ln" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CGACTGGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 1526426075
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/91602526/TGL07_0013_Vg_P_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0013_Vg_P_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0013_Vg_P_PE_460_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01338" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Vg" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CCTCCTGA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 1392660719
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/537639/TGL07_0014_Ce_P_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0014_Ce_P_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0014_Ce_P_PE_434_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01458" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_5" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ce" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_5" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "AACAACCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 1908020425
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/14780751/TGL07_0015_Um_M_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0015_Um_M_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0015_Um_M_PE_453_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01602" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_6" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Um" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_6" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CAAGGAGC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : -658806049
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/22355220/TGL07_0016_Om_M_EX_171012.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0016_Om_M_EX_171012.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0016_Om_M_PE_492_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-01650" ] ],
+        "geo_group_id" : [ [ "171012" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_7" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Om" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_7" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "CACCTTAC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : -877221734
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/46449207/TGL07_0017_Co_P_EX_171106.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0017_Co_P_EX_171106.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0017_Co_P_PE_399_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00603" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2931_7" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Co" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0288_ACBG0BANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0288_ACBG0BANXX_lane_7" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGGAACAA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 641149397
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/29430998/TGL07_0018_Lv_M_EX_171106.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0018_Lv_M_EX_171106.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0018_Lv_M_PE_333_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "COM-00604" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Lv" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "M" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "ACAGATTC" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : 1449878299
+    } ],
+    "outputFileProvenanceRecords" : 1
+  }, {
+    "workflowIni" : {
+      "cnvkit_mem" : "30",
+      "data_dir" : "data",
+      "input_bam_file" : "/.mounts/labs/TGL/production2/seqware-results/BamMergePreprocessing_1.1/63617247/TGL07_0019_Ut_P_EX_171106.sorted.filter.deduped.realign.recal.bam",
+      "input_files_normal" : "/.mounts/labs/PDE/Modules/sw/cnvkit/0.9.3/reference/v6_cos_reference.cnn ",
+      "manual_output" : "false",
+      "metadata" : "metadata",
+      "output_dir" : "seqware-results",
+      "output_filename_prefix" : "TGL07_0019_Ut_P_EX_171106.sorted.filter.deduped.realign.recal",
+      "python" : "/.mounts/labs/PDE/Modules/sw/python/Python-3.6.4",
+      "rpath" : "/.mounts/labs/PDE/Modules/sw/R/R-3.3.0",
+      "sample_name" : "null",
+      "template_type" : "EX",
+      "tmp_dir" : "tmp"
+    },
+    "files" : [ {
+      "studyTitle" : [ "TGL07" ],
+      "studyAttributes" : { },
+      "experimentName" : [ ],
+      "experimentAttributes" : { },
+      "sampleName" : [ "TGL07_0019_Ut_P_PE_445_EX" ],
+      "sampleAttributes" : {
+        "geo_external_name" : [ [ "IMP-00683" ] ],
+        "geo_group_id" : [ [ "171106" ] ],
+        "geo_library_source_template_type" : [ [ "EX" ] ],
+        "geo_organism" : [ [ "Homo sapiens" ] ],
+        "geo_prep_kit" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_purpose" : [ [ "Library" ] ],
+        "geo_receive_date" : [ [ "2017-06-06" ] ],
+        "geo_run_id_and_position" : [ [ "2930_1" ] ],
+        "geo_str_result" : [ [ "Not Submitted" ] ],
+        "geo_targeted_resequencing" : [ [ "Agilent SureSelect Human All Exon V6 Cosmic" ] ],
+        "geo_template_type" : [ [ "Illumina PE Library" ] ],
+        "geo_tissue_origin" : [ [ "Ut" ] ],
+        "geo_tissue_preparation" : [ [ "FFPE" ] ],
+        "geo_tissue_type" : [ [ "P" ] ]
+      },
+      "sequencerRunName" : [ "171206_D00331_0289_BCBH0FANXX" ],
+      "sequencerRunAttributes" : {
+        "instrument_name" : [ [ "D00331" ] ]
+      },
+      "laneName" : [ "171206_D00331_0289_BCBH0FANXX_lane_1" ],
+      "laneAttributes" : { },
+      "iusTag" : [ "TGGCTTCA" ],
+      "iusAttributes" : { },
+      "workflowName" : [ "BamMergePreprocessing" ],
+      "processingAlgorithm" : [ "ProvisionFiles" ],
+      "processingAttributes" : { },
+      "fileMetaType" : [ "application/bam" ],
+      "fileAttributes" : {
+        "aligner" : [ [ "BwaMem" ] ],
+        "cvterms" : [ [ "EDAM:format_2572,EDAM:operation_2089" ] ]
+      },
+      "fileId" : -75502662
+    } ],
+    "outputFileProvenanceRecords" : 1
+  } ]
+}
