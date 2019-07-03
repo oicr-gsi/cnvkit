@@ -287,7 +287,6 @@ public class cnvkitWorkflowClient extends OicrWorkflow {
         cmd.addArgument(this.rExports);
         cmd.addArgument("cnvkit.py diagram");
         cmd.addArgument("-s " + this.segmetricsCallCnsFile);
-        cmd.addArgument("-o " + this.segmetricsCallCnsFile);
         diagram.setMaxMemory(Integer.toString(cnvkitMem * 1024));
         diagram.setQueue(queue);
         return diagram;
