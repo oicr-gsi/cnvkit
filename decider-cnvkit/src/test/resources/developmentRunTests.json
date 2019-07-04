@@ -18,10 +18,10 @@
             }
         },
         {
-            "id": "TGL17_EX",
+            "id": "HALT_WG",
             "parameters": {
-                "--study-name": "TGL17",
-                "--template-type": "EX"
+                "--study-name": "HALT",
+                "--template-type": "WG"
             }
         }
     ]

@@ -65,9 +65,7 @@ public class cnvkitDecider extends OicrDecider {
         if (this.options.has("template-type")) {
             this.templateType = options.valueOf("template-type").toString();
             if (!this.templateType.equals("EX")) { // check for template type
-                Log.error("Wrong template type; Runs only for EX");
-                rv.setExitStatus(ReturnValue.INVALIDARGUMENT);
-                return rv;
+                Log.info("Designed to work best for template type EX. But OK  lets run for " + this.templateType);
             }
         } else {
             if (!options.hasArgument("template-type")) {
